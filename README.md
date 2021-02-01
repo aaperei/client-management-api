@@ -56,20 +56,24 @@ If you want to deploy this application to Google kubernetes, just follow this tu
 # HTTP Requests - Curl
 You can explore the client-management-api service using the curl commands:
 
+### Get all clients
 ```
-#Get all clients
 curl --location --request GET 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients'
-  
-#Find a specific client by 'id'
+```
+### Find a specific client by 'id'
+```
 curl --location --request GET 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/1'
-  
-#Find client by query
+```
+### Find client by query
+```
 curl --location --request GET 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/find?q=maRia'
-  
-#Delete a specific cliend by 'id'
+```
+### Delete a specific client by 'id'
+```
 curl --location --request DELETE 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/1'
-  
-#Create a new Client
+```
+### Create a new Client
+```
 curl --location --request POST 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Basic dXNlcjpwYXNzd29yZA==' \
@@ -87,8 +91,9 @@ curl --location --request POST 'https://client-management-api-dot-aaperei.rj.r.a
 "email": "test@test.com.br",
 "birthDate": "1991-02-03"
 }'
-  
-#Update an existing client by id   
+```
+### Update an existing client by id
+```  
  curl --location --request PUT 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/8' \
  --header 'Content-Type: application/json' \
  --header 'Authorization: Basic dXNlcjpwYXNzd29yZA==' \
@@ -108,8 +113,9 @@ curl --location --request POST 'https://client-management-api-dot-aaperei.rj.r.a
  "birthDate": "1991-02-03",
  "email": "test@test.com.br"
  }'    
- 
-#Update some attributes from a specific cliend by 'id'
+```
+### Update some attributes from a specific cliend by 'id'
+```
  curl --location --request PATCH 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/1' \
  --header 'Content-Type: application/json' \
  --header 'Authorization: Basic dXNlcjpwYXNzd29yZA==' \
