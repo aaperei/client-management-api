@@ -1,0 +1,12 @@
+runtime: java11
+service: client-management-api
+instance_class: F4
+
+resources:
+  cpu: 2
+  memory_gb: 2.3
+  disk_size_gb: 10
+  volumes:
+    - name: ramdisk1
+      volume_type: tmpfs
+      size_gb: 0.5
