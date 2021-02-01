@@ -54,4 +54,4 @@ If you want to deploy this application to Google kubernetes, just follow this tu
 [Deploy a Spring Boot Java app to Kubernetes on Google Kubernetes Engine](https://developers.google.com/codelabs/cloud-springboot-kubernetes?continue=https%3A%2F%2Fdevelopers.google.com%2Flearn%2Fpathways%2Fjava-cloud-fundamentals%23codelab-https%3A%2F%2Fdevelopers.google.com%2Fcodelabs%2Fcloud-springboot-kubernetes#5)
 
 # API Documentation
-You can try out the APIs through Swagger docs: [Api Documentation](https://client-management-api-dot-aaperei.rj.r.appspot.com/swagger-ui.html#/client-controller/getAllClientsUsingGET)
+You can try out the APIs through Swagger docs: [Api Documentation](https://client-management-api-dot-aaperei.rj.r.appspot.com/swagger-ui.html#/client-controller)
