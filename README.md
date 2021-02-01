@@ -56,66 +56,68 @@ If you want to deploy this application to Google kubernetes, just follow this tu
 # HTTP Requests - Curl
 You can explore the client-management-api service using the curl commands:
 
-     $ #Get all clients
-     $ curl --location --request GET 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients'
-     $   
-     $ #Find a specific client by 'id'
-     $ curl --location --request GET 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/1'
-     $        
-     $ #Find client by query     
-     $ curl --location --request GET 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/find?q=maRia'
-     $        
-     $ #Delete a specific cliend by 'id'     
-     $ curl --location --request DELETE 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/1'
-     $        
-     $ #Create a new Client
-     $ curl --location --request POST 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients' \
-     $ --header 'Content-Type: application/json' \
-     $ --header 'Authorization: Basic dXNlcjpwYXNzd29yZA==' \
-     $ --data-raw '{
-     $ "cpf": 79191439043,
-     $ "name": "RITA ANDRADE",
-     $ "address": {
-     $ "street": "Rua dos Amores xxxxxxxxxxxx",
-     $ "streetNumber": 1000,
-     $ "city": "Paraíso",
-     $ "neighborhood": "Bosque",
-     $ "zipCode": 4641616,
-     $ "country": "BRASIL"
-     $ },
-     $ "email": "test@test.com.br",
-     $ "birthDate": "1991-02-03"
-     $ }'
-     $        
-     $ #Update an existing client by id   
-     $  curl --location --request PUT 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/8' \
-     $  --header 'Content-Type: application/json' \
-     $  --header 'Authorization: Basic dXNlcjpwYXNzd29yZA==' \
-     $  --data-raw '{
-     $  "id": 8,
-     $  "cpf": 79191439043,
-     $  "name": "RITA ANDRADE",
-     $  "address": {
-     $  "id": 8,
-     $  "street": "Rua dos Amores Mudou de Nome",
-     $  "streetNumber": 1000,
-     $  "city": "Paraíso",
-     $  "neighborhood": "Bosque",
-     $  "zipCode": 4641616,
-     $  "country": "BRASIL"
-     $  },
-     $  "birthDate": "1991-02-03",
-     $  "email": "test@test.com.br"
-     $  }'    
-     $  
-     $ #Update some attributes from a specific cliend by 'id'     
-     $  curl --location --request PATCH 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/1' \
-     $  --header 'Content-Type: application/json' \
-     $  --header 'Authorization: Basic dXNlcjpwYXNzd29yZA==' \
-     $  --data-raw '  {
-     $  "id": 1,
-     $  "cpf": 16559815900,
-     $  "name": "JOSE GERALDO NETO NOVO NOME",
-     $  "birthDate": "1990-02-03",
-     $  "email": "test@test.com.br"
-     $  }'
+```
+#Get all clients
+curl --location --request GET 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients'
+  
+#Find a specific client by 'id'
+curl --location --request GET 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/1'
+  
+#Find client by query
+curl --location --request GET 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/find?q=maRia'
+  
+#Delete a specific cliend by 'id'
+curl --location --request DELETE 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/1'
+  
+#Create a new Client
+curl --location --request POST 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic dXNlcjpwYXNzd29yZA==' \
+--data-raw '{
+"cpf": 79191439043,
+"name": "RITA ANDRADE",
+"address": {
+"street": "Rua dos Amores xxxxxxxxxxxx",
+"streetNumber": 1000,
+"city": "Paraíso",
+"neighborhood": "Bosque",
+"zipCode": 4641616,
+"country": "BRASIL"
+},
+"email": "test@test.com.br",
+"birthDate": "1991-02-03"
+}'
+  
+#Update an existing client by id   
+ curl --location --request PUT 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/8' \
+ --header 'Content-Type: application/json' \
+ --header 'Authorization: Basic dXNlcjpwYXNzd29yZA==' \
+ --data-raw '{
+ "id": 8,
+ "cpf": 79191439043,
+ "name": "RITA ANDRADE",
+ "address": {
+ "id": 8,
+ "street": "Rua dos Amores Mudou de Nome",
+ "streetNumber": 1000,
+ "city": "Paraíso",
+ "neighborhood": "Bosque",
+ "zipCode": 4641616,
+ "country": "BRASIL"
+ },
+ "birthDate": "1991-02-03",
+ "email": "test@test.com.br"
+ }'    
+ 
+#Update some attributes from a specific cliend by 'id'
+ curl --location --request PATCH 'https://client-management-api-dot-aaperei.rj.r.appspot.com/clients/1' \
+ --header 'Content-Type: application/json' \
+ --header 'Authorization: Basic dXNlcjpwYXNzd29yZA==' \
+ --data-raw '  {
+ "id": 1,
+ "cpf": 16559815900,
+ "name": "JOSE GERALDO NETO NOVO NOME",
+ "birthDate": "1990-02-03",
+ "email": "test@test.com.br"
+ }'
+ ```
