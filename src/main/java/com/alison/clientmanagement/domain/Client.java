@@ -80,7 +80,7 @@ public class Client {
 
     this.setCpf(client.getCpf() != null ? client.getCpf() : this.getCpf());
     this.setName(client.getName() != null ? client.getName() : this.getName());
-    this.setBirthDate(client.getBirthDate());
+    this.setBirthDate(client.getBirthDate() != null ? client.getBirthDate() : this.getBirthDate());
     if (client.getAddress() != null && !this.getAddress().equals(client.getAddress())) {
       this.setAddress(new Address());
       this.getAddress().updateNotNullAttributes(client.getAddress());
