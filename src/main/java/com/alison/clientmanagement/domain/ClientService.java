@@ -52,9 +52,8 @@ public class ClientService {
 			throw new EntityNotFoundException();
 		}
 				
-		clients.addAll(clientRepository.findByNameContaining(querySearch));
-		clients.addAll(clientRepository.findByCpfContaining(querySearch));
-		clients.addAll(clientRepository.findByBirthDateContaining(querySearch));
+		clients.addAll(clientRepository.findByNameContainingIgnoreCase(querySearch));
+		clients.addAll(clientRepository.findByEmailContainingIgnoreCase(querySearch));
 
 		if(clients.isEmpty()) {
 			throw new EntityNotFoundException();
@@ -68,7 +67,7 @@ public class ClientService {
 	 * 
 	 * @param id of {@link Client} searched
 	 * @return the searched {@link Client}
-	 * @throws {@link EntityNotFoundException} if id was not found on database
+	 * @throws EntityNotFoundException {@link EntityNotFoundException} is thrown if id was not found on database
 	 */
 	public Client findById(final Long id) {
 		return clientRepository

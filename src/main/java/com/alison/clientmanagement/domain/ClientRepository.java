@@ -14,9 +14,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long>{
-	
-	List<Client> findByCpfContaining(final String cpf);
-	List<Client> findByNameContaining(final String name);
-	List<Client> findByBirthDateContaining(final String birthDate);
+
+	List<Client> findByNameContainingIgnoreCase(final String name);
+	List<Client> findByEmailContainingIgnoreCase(final String name);
+
 	
 }

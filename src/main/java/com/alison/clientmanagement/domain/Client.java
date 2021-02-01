@@ -14,7 +14,6 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 import lombok.Data;
 
 /**
@@ -33,34 +32,29 @@ public class Client {
   @Column(name = "id")
   private Long id;
 
-  @Column(name = "cpf")
-  @NotNull(message = "CPF cannot be null")
+  @Column(name = "cpf", nullable = false)
   private Long cpf;
 
-  @Column(name = "name", length = 50)
-  @NotNull(message = "Name cannot be null")
+  @Column(name = "name", length = 50, nullable = false)
   private String name;
 
   @ManyToOne(cascade = CascadeType.ALL)
-  @NotNull(message = "Address cannot be null")
   private Address address;
 
   @JsonFormat(pattern = "yyyy-MM-dd")
-  @Column(name = "birth_date")
-  @NotNull(message = "Birth date cannot be null")
+  @Column(name = "birth_date", nullable = false)
   private LocalDate birthDate;
 
   @Email(message = "It is not a valid email address")
   @Column(name = "email")
-  @NotNull(message = "Email address cannot be null")
   private String email;
 
   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", shape = JsonFormat.Shape.STRING)
-  @Column(name = "created")
+  @Column(name = "created", nullable = false)
   private LocalDateTime created;
 
   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", shape = JsonFormat.Shape.STRING)
-  @Column(name = "updated")
+  @Column(name = "updated", nullable = false)
   private LocalDateTime updated;
 
 
