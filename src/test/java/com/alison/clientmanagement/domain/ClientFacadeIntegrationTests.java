@@ -1,6 +1,5 @@
 package com.alison.clientmanagement.domain;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -23,7 +22,7 @@ class ClientFacadeIntegrationTests {
 
   private Client newClient;
 
-  final LocalDateTime localDateTimeBeforeUpdate = LocalDateTime.now();
+  private LocalDateTime localDateTimeBeforeUpdate = LocalDateTime.now();
 
   @BeforeEach
   void init() {
@@ -41,7 +40,7 @@ class ClientFacadeIntegrationTests {
     newClient.getAddress().setStreetNumber(1456);
     newClient.getAddress().setZipCode(466595672);
 
-    final LocalDateTime localDateTimeBeforeUpdate = LocalDateTime.now();
+    localDateTimeBeforeUpdate = LocalDateTime.now();
   }
 
   @Test
@@ -57,8 +56,7 @@ class ClientFacadeIntegrationTests {
     Client client = clientFacade.addClient(newClient);
     client.setName(newName);
     client = clientFacade.updateClient(client.getId(), client);
-    assertEquals(true,
-        client.getUpdated().isAfter(localDateTimeBeforeUpdate) && newName.equals(client.getName()));
+    assertTrue(client.getUpdated().isAfter(this.localDateTimeBeforeUpdate) && newName.equals(client.getName()));
   }
 
 
