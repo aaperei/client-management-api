@@ -22,7 +22,7 @@ All APIs use JSON format as the communication pattern to send and receive inform
  - `GET /clients/{id}` - Returns the details of a specific client
  - `POST /clients` - Adds a new client
  - `PUT /clients` - Updates client attributes 
- - `PATH /clients/{id}` - Updates some client attributes 
+ - `PATCH /clients/{id}` - Updates some client attributes 
  - `DELETE /clients/{id}`- Deletes a specific client
  
 # Running the application
